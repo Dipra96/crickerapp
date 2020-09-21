@@ -1,0 +1,40 @@
+{
+  "players": [
+    {
+      "PlayerNo": "18",
+      "PlayerName": "Virat Kohli",
+      "PlayerPosition": "Batsman",
+      "id": 0.3865578220305801
+    },
+    {
+      "PlayerNo": "7",
+      "PlayerName": "MS Dhoni",
+      "PlayerPosition": "Wicket Keeper",
+      "id": 0.6290047054762693
+    },
+    {
+      "PlayerNo": "10",
+      "PlayerName": "Sachin Tendulkar",
+      "PlayerPosition": "Batsman",
+      "id": 0.31332502000448126
+    }
+  ],
+  "shedules": [
+    {
+      "id": 16,
+      "Team1": "India",
+      "Team2": "Australia",
+      "Tournament": "Friendly",
+      "Date": "25/08/2019",
+      "Place": "Mohali,India"
+    },
+    {
+      "id": 12,
+      "Team1": "Kolkata Knight Riders",
+      "Team2": "Royal Challengers Bangalore",
+      "Tournament": "Indian Premier League",
+      "Date": "09/11/2020",
+      "Place": "UAE"
+    }
+  ]
+}

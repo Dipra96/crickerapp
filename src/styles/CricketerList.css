@@ -1,0 +1,11 @@
+edit-modal{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+parent-div{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}   
