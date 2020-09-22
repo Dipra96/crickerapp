@@ -4,46 +4,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
 
-import Home from './Home';
-import CricketerList from './CricketerList';
-import AddCricketer from './AddCricketer';
-import Shedule from './Shedule';
-
-function TabPanel(props) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box p={3}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
-
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired,
-};
-
-function a11yProps(index) {
-  return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
-  };
-}
+import {Link} from 'react-router-dom';
+import '../styles/Navigation.css';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -54,34 +17,18 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SimpleTabs() {
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
 
   return (
     <div className={classes.root}>
       <AppBar position="static">
-        <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-          <Tab label="Home" {...a11yProps(0)} />
-          <Tab label="Cricketers List" {...a11yProps(1)} />
-          <Tab label="Add Cricketer" {...a11yProps(2)} />
-          <Tab label="Schedule" {...a11yProps(3)} />
+        <Tabs className='nav-tabs' aria-label="simple tabs example">
+          <Link className='tab-link' to='/home'><Tab label="Home"/></Link>
+          <Link className='tab-link' to='/cricketerlist'><Tab label="Cricketers List"/></Link>
+          <Link className='tab-link' to='/addcricketer'><Tab label="Add Cricketer"/></Link>
+          <Link className='tab-link' to='/shedule'><Tab label="Schedule"/></Link>
         </Tabs>
       </AppBar>
-      <TabPanel value={value} index={0}>
-        <Home/>
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <CricketerList/>
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <AddCricketer/>
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-        <Shedule/>
-      </TabPanel>
+
     </div>
   );
 }

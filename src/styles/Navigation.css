@@ -1,0 +1,10 @@
+.nav-tabs{
+ color : black;
+}
+.tab-link{
+    font-weight: 900;
+    color : black;
+}
+.tab-link:active{
+    color:red;
+}

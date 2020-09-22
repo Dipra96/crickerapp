@@ -17,6 +17,12 @@
       "PlayerNo": "12",
       "PlayerName": "Yuvraj Singh",
       "PlayerPosition": "All rounder"
+    },
+    {
+      "id": 0.45275435002375986,
+      "PlayerNo": "1",
+      "PlayerName": "Saurav Ganguly",
+      "PlayerPosition": "Captain"
     }
   ],
   "shedules": [
