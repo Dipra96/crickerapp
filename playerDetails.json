@@ -7,16 +7,16 @@
       "id": 0.3865578220305801
     },
     {
-      "PlayerNo": "7",
-      "PlayerName": "MS Dhoni",
-      "PlayerPosition": "Wicket Keeper",
-      "id": 0.6290047054762693
-    },
-    {
       "PlayerNo": "10",
       "PlayerName": "Sachin Tendulkar",
       "PlayerPosition": "Batsman",
-      "id": 0.31332502000448126
+      "id": 0.6290047054762693
+    },
+    {
+      "id": 0.14469084884873262,
+      "PlayerNo": "12",
+      "PlayerName": "Yuvraj Singh",
+      "PlayerPosition": "All rounder"
     }
   ],
   "shedules": [

@@ -23,6 +23,10 @@ const AddCricketer=()=> {
         PlayerName: document.getElementById("player-name-id").value,
         PlayerPosition: document.getElementById("player-position-id").value
         }).then(resp => {
+            alert('Details of '+document.getElementById("player-name-id").value+ ' has been added');
+            document.getElementById("player-no-id").value="";
+            document.getElementById("player-name-id").value="";
+            document.getElementById("player-position-id").value="";
             console.log(resp.data);
         }).catch(error => {
             console.log(error);

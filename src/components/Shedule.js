@@ -10,6 +10,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 //import Button from '@material-ui/core/Button';
+import '../styles/Shedule.css';
 
 const useStyles = makeStyles({
   table: {
@@ -21,16 +22,16 @@ function createData(Team1, Team2, Tournament,Date,Place) {
   return { Team1,Team2, Tournament,Date,Place};
 }
 
-const rows = [];
-
 
 const Shedule=()=> {
-    const classes = useStyles();
+  const classes = useStyles();
 
   const [shedules,setShedules]=useState([]);
   const axios = require('axios');
+  const rows = [];
 
     useEffect(() => {
+       // rows=[];
         axios.get('http://localhost:3001/shedules')
         .then(resp => {
         //console.log(resp.data);
@@ -42,13 +43,13 @@ const Shedule=()=> {
         .catch(error => {
          console.log(error);
         });    
-    },);  
+    },[]);  
 
 
   return (
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
-        <TableHead>
+        <TableHead className='Table-head'>
           <TableRow>
             <TableCell align="right">Team1</TableCell>
             <TableCell align="right">Team2</TableCell>

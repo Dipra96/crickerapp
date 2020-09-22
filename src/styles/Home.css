@@ -4,3 +4,9 @@ img{
 .home-mainDiv{
     background-color: cornflowerblue;
 }
+h1{
+    color: darkblue;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}

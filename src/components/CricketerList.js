@@ -35,11 +35,29 @@ export default function CricketerList() {
   const [editPlayerNo,setEditPlayerNo]=useState('');
   const [editPlayerName,setEditPlayerName]=useState('');
   const [editPlayerPosition,setEditPlayerPosition]=useState('');
+  const [editFlag,setEditFlag]=useState(false);
+  const [deleteFlag,setDeleteFlag]=useState(false);
 
   const rows = [];
 
     useEffect(() => {
-         axios.get('http://localhost:3001/players')
+        fetchData()
+    },[]);
+    
+    useEffect(() => {
+      if(editFlag === true) {fetchData() 
+        setEditFlag(false)
+      }
+    }, [editFlag]);
+
+    useEffect(() => {
+      if(deleteFlag === true) {fetchData() 
+         setDeleteFlag(false)
+        }
+    }, [deleteFlag]);
+
+    const fetchData = () => {
+      axios.get('http://localhost:3001/players')
         .then(resp => {
         //console.log(resp.data);
         resp.data.forEach(element => {
@@ -50,8 +68,8 @@ export default function CricketerList() {
         })      
         .catch(error => {
          console.log(error);
-        });       
-    },[]);  
+        });
+    }
 
   const [editID,setEditID]=useState(0);  
   const onEdit=(id)=>{
@@ -65,18 +83,20 @@ export default function CricketerList() {
       PlayerName: editPlayerName,
       PlayerPosition: editPlayerPosition
     }).then(resp => {
-  
+      setEditFlag(true);
         console.log(resp.data);
     }).catch(error => {
        console.log(error);
     });  
     setModalTrigger(false);
   }
+
   const onDelete=(id)=>{
     let url='http://localhost:3001/players/'+id;
     console.log(url);
     axios.delete(url)
     .then(resp => {
+        setDeleteFlag(true);
         console.log(resp.data)
     }).catch(error => {
         console.log(error);
@@ -89,7 +109,7 @@ export default function CricketerList() {
 
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
-        <TableHead>
+        <TableHead className='Table-head'>
           <TableRow>
             <TableCell>Player No</TableCell>
             <TableCell align="right">Player Name</TableCell>

@@ -7,6 +7,7 @@ const Home=()=> {
     return (
         <div className='home-mainDiv'>
             <Container className='container' maxWidth="sm">
+                <h1>Indian Cricket Team</h1>
                 <p>
                     <img src={team}/>
                 </p>

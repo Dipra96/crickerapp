@@ -1,11 +1,13 @@
-edit-modal{
-    width: 50%;
+.edit-modal{
     display: flex;
     justify-content: center;
     flex-direction: row;
 }
-parent-div{
+.parent-div{
     display: flex;
     justify-content: center;
     flex-direction: row;
 }   
+.Table-head{
+    background-color: cornflowerblue;
+}
